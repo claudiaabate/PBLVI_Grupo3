@@ -6,6 +6,9 @@ public class SceneLoader : MonoBehaviour
     public GameObject UIControls;
     public GameObject UICredits;
 
+    public static bool ControlsIsOn = false;
+    public static bool CreditsIsOn = false;
+
     //Llamamos a funciones públicas con el botón derecho en el inspector del componente
     [ContextMenu("LoadGame")]
     private void Start()
@@ -36,11 +39,32 @@ public class SceneLoader : MonoBehaviour
     {
         //Muestra el panel de controles
         UIControls.SetActive(true);
+        ControlsIsOn = true;
     }
 
     public void Credits()
     {
         //Muestra el panel de créditos
         UICredits.SetActive(true);
+        CreditsIsOn = true;
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (ControlsIsOn || CreditsIsOn)
+            {
+                Return();
+            }
+        }
+    }
+
+    public void Return()
+    {
+        UIControls.SetActive(false);
+        UICredits.SetActive(false);
+        ControlsIsOn = false;
+        CreditsIsOn = false;
     }
 }
