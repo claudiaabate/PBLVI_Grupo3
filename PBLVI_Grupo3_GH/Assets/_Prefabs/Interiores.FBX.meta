@@ -1,0 +1,326 @@
+fileFormatVersion: 2
+guid: c2775816b10ec9041a259d34a72d6ff0
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: EsconditeGema)
+    100002: Escultura Ra
+    100004: Esfinge Ra
+    100006: Hab.Bastet(paredFondo)
+    100008: Hab.Bastet(paredInicio)
+    100010: Hab.Bastet(paredLateral)
+    100012: Hab.Horus(paredFondo)
+    100014: Hab.Horus+Bastet
+    100016: Hab.Horus+Ra
+    100018: Hab.Ra(paredInicio)
+    100020: Hab.Ra(paredLateral)
+    100022: Hab.Ra(PparedFondo+escondite)
+    100024: //RootNode
+    100026: "Le\xF3n1 Horus"
+    100028: "Le\xF3n2 Horus"
+    100030: Moneda Bastet
+    100032: Moneda Horus
+    100034: Moneda Ra
+    100036: Pasillo.ParedDer
+    100038: Pasillo.ParedInicio
+    100040: Pasillo.ParedIzq
+    100042: Pasillo.ParedPuerta
+    100044: PuertaEsconditeGema
+    100046: PuertaTrampilla
+    100048: "Sal\xF3n"
+    100050: "Sal\xF3n(puertaBastet)"
+    100052: "Sal\xF3n(puertaHorus)"
+    100054: "Sal\xF3n(puertaRa)"
+    100056: Suelo
+    100058: "Suelo + Inscripci\xF3n"
+    100060: SueloPasilloPrincipal
+    100062: Techo
+    400000: EsconditeGema)
+    400002: Escultura Ra
+    400004: Esfinge Ra
+    400006: Hab.Bastet(paredFondo)
+    400008: Hab.Bastet(paredInicio)
+    400010: Hab.Bastet(paredLateral)
+    400012: Hab.Horus(paredFondo)
+    400014: Hab.Horus+Bastet
+    400016: Hab.Horus+Ra
+    400018: Hab.Ra(paredInicio)
+    400020: Hab.Ra(paredLateral)
+    400022: Hab.Ra(PparedFondo+escondite)
+    400024: //RootNode
+    400026: "Le\xF3n1 Horus"
+    400028: "Le\xF3n2 Horus"
+    400030: Moneda Bastet
+    400032: Moneda Horus
+    400034: Moneda Ra
+    400036: Pasillo.ParedDer
+    400038: Pasillo.ParedInicio
+    400040: Pasillo.ParedIzq
+    400042: Pasillo.ParedPuerta
+    400044: PuertaEsconditeGema
+    400046: PuertaTrampilla
+    400048: "Sal\xF3n"
+    400050: "Sal\xF3n(puertaBastet)"
+    400052: "Sal\xF3n(puertaHorus)"
+    400054: "Sal\xF3n(puertaRa)"
+    400056: Suelo
+    400058: "Suelo + Inscripci\xF3n"
+    400060: SueloPasilloPrincipal
+    400062: Techo
+    2100000: 'Material #27'
+    2100002: No Name
+    2100004: 'Material #26'
+    2100006: 'Material #298'
+    2100008: Material_1
+    2100010: Material_2
+    2100012: Material_3
+    2100014: Hueco Moneda RA
+    2100016: 'Material #299'
+    2100018: 'Material #313'
+    2100020: Moneda Ra
+    2100022: Moneda Horus
+    2100024: Moneda Bastet
+    2300000: EsconditeGema)
+    2300002: Escultura Ra
+    2300004: Esfinge Ra
+    2300006: Hab.Bastet(paredFondo)
+    2300008: Hab.Bastet(paredInicio)
+    2300010: Hab.Bastet(paredLateral)
+    2300012: Hab.Horus(paredFondo)
+    2300014: Hab.Horus+Bastet
+    2300016: Hab.Horus+Ra
+    2300018: Hab.Ra(paredInicio)
+    2300020: Hab.Ra(paredLateral)
+    2300022: Hab.Ra(PparedFondo+escondite)
+    2300024: "Le\xF3n1 Horus"
+    2300026: "Le\xF3n2 Horus"
+    2300028: Moneda Bastet
+    2300030: Moneda Horus
+    2300032: Moneda Ra
+    2300034: Pasillo.ParedDer
+    2300036: Pasillo.ParedInicio
+    2300038: Pasillo.ParedIzq
+    2300040: Pasillo.ParedPuerta
+    2300042: PuertaEsconditeGema
+    2300044: PuertaTrampilla
+    2300046: "Sal\xF3n"
+    2300048: "Sal\xF3n(puertaBastet)"
+    2300050: "Sal\xF3n(puertaHorus)"
+    2300052: "Sal\xF3n(puertaRa)"
+    2300054: Suelo
+    2300056: "Suelo + Inscripci\xF3n"
+    2300058: SueloPasilloPrincipal
+    2300060: Techo
+    3300000: EsconditeGema)
+    3300002: Escultura Ra
+    3300004: Esfinge Ra
+    3300006: Hab.Bastet(paredFondo)
+    3300008: Hab.Bastet(paredInicio)
+    3300010: Hab.Bastet(paredLateral)
+    3300012: Hab.Horus(paredFondo)
+    3300014: Hab.Horus+Bastet
+    3300016: Hab.Horus+Ra
+    3300018: Hab.Ra(paredInicio)
+    3300020: Hab.Ra(paredLateral)
+    3300022: Hab.Ra(PparedFondo+escondite)
+    3300024: "Le\xF3n1 Horus"
+    3300026: "Le\xF3n2 Horus"
+    3300028: Moneda Bastet
+    3300030: Moneda Horus
+    3300032: Moneda Ra
+    3300034: Pasillo.ParedDer
+    3300036: Pasillo.ParedInicio
+    3300038: Pasillo.ParedIzq
+    3300040: Pasillo.ParedPuerta
+    3300042: PuertaEsconditeGema
+    3300044: PuertaTrampilla
+    3300046: "Sal\xF3n"
+    3300048: "Sal\xF3n(puertaBastet)"
+    3300050: "Sal\xF3n(puertaHorus)"
+    3300052: "Sal\xF3n(puertaRa)"
+    3300054: Suelo
+    3300056: "Suelo + Inscripci\xF3n"
+    3300058: SueloPasilloPrincipal
+    3300060: Techo
+    4300000: "Sal\xF3n"
+    4300002: Hab.Horus(paredFondo)
+    4300004: Hab.Horus+Bastet
+    4300006: Hab.Ra(paredLateral)
+    4300008: Hab.Ra(PparedFondo+escondite)
+    4300010: Hab.Bastet(paredFondo)
+    4300012: Hab.Bastet(paredInicio)
+    4300014: Hab.Bastet(paredLateral)
+    4300016: Suelo
+    4300018: Hab.Horus+Ra
+    4300020: "Sal\xF3n(puertaRa)"
+    4300022: "Sal\xF3n(puertaHorus)"
+    4300024: "Le\xF3n1 Horus"
+    4300026: "Sal\xF3n(puertaBastet)"
+    4300028: Esfinge Ra
+    4300030: "Le\xF3n2 Horus"
+    4300032: Hab.Ra(paredInicio)
+    4300034: EsconditeGema)
+    4300036: "Suelo + Inscripci\xF3n"
+    4300038: PuertaEsconditeGema
+    4300040: Techo
+    4300042: SueloPasilloPrincipal
+    4300044: Pasillo.ParedPuerta
+    4300046: Pasillo.ParedIzq
+    4300048: Pasillo.ParedDer
+    4300050: Pasillo.ParedInicio
+    4300052: PuertaTrampilla
+    4300054: Moneda Ra
+    4300056: Moneda Horus
+    4300058: Moneda Bastet
+    4300060: Escultura Ra
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Hueco Moneda RA
+    second: {fileID: 2100000, guid: 330dd575b673b0148989ce41c5e72935, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #26'
+    second: {fileID: 2100000, guid: 84814c563e888c04eb1c7c01db643cf3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #27'
+    second: {fileID: 2100000, guid: e940989c050a56b4a8fca01ae9870210, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #298'
+    second: {fileID: 2100000, guid: 81c2223f1fc124541bb1703e3d7aceaa, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #299'
+    second: {fileID: 2100000, guid: 1bbac16b233728346a6d56a0f1eaaa3b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #313'
+    second: {fileID: 2100000, guid: 3166a0ccede83dc47bfac582c388e463, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_1
+    second: {fileID: 2100000, guid: 03c3325d5b334244fb5a1a189051efbf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_2
+    second: {fileID: 2100000, guid: d0637bb8be5f07b4c9d09a1ae8f4dcf4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_3
+    second: {fileID: 2100000, guid: 4fa6a8821968cbb4481c13af79dc38f0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Moneda Bastet
+    second: {fileID: 2100000, guid: 306c50b3e01eab5439abf6c337f5e3f1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Moneda Horus
+    second: {fileID: 2100000, guid: f6d00631a2859464ca5c958bffe6ee05, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Moneda Ra
+    second: {fileID: 2100000, guid: 99954ff5623e5e844af9a5e2270c6294, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: No Name
+    second: {fileID: 2100000, guid: e2fe219c2baaa3847ac22f8455b7cc33, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
