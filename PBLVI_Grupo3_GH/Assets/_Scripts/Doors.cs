@@ -5,7 +5,6 @@ using UnityEngine;
 public class Doors : MonoBehaviour
 {
     public GameObject textinfo;
-    public GameObject textopen;
     public GameObject ra;
     public GameObject horus;
     public GameObject bastet;
@@ -19,7 +18,6 @@ public class Doors : MonoBehaviour
     void Start()
     {
         textinfo.gameObject.SetActive(false);
-        textopen.gameObject.SetActive(false);
         ra.gameObject.SetActive(false);
         horus.gameObject.SetActive(false);
         bastet.gameObject.SetActive(false);
@@ -29,7 +27,17 @@ public class Doors : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.R))
         {
-            ra.gameObject.SetActive(false);
+            ra.gameObject.SetActive(true);
+        }
+
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            horus.gameObject.SetActive(true);
+        }
+
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            bastet.gameObject.SetActive(true);
         }
     }
 
@@ -57,27 +65,16 @@ public class Doors : MonoBehaviour
 
     // stayCount allows the OnTriggerStay to be displayed less often
     // than it actually occurs.
-    private float stayCount = 0.0f;
+    //private float stayCount = 0.0f;
     private void OnTriggerStay(Collider other)
     {
-        /*if (stay)
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            /*if (stayCount > 0.25f)
-            {
-                Debug.Log("staying");
-                stayCount = stayCount - 0.25f;
-            }
-            else
-            {
-                stayCount = stayCount + Time.deltaTime;
-            }*/
-
-            if (Input.GetKeyDown(KeyCode.Escape))
-            {
-                ra.gameObject.SetActive(false);
-                textinfo.gameObject.SetActive(true);
-            }
-        //}
+            ra.gameObject.SetActive(false);
+            horus.gameObject.SetActive(false);
+            bastet.gameObject.SetActive(false);
+            textinfo.gameObject.SetActive(false);
+        }
     }
 
     private void OnTriggerExit(Collider other)
