@@ -14,6 +14,11 @@ public class Doors : MonoBehaviour
     public bool exit = true;
     public float moveSpeed;
 
+    private Animator _animator;
+    //public float OpenPosition;
+    //public float ClosePosition;
+    //public float Duration = 1;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +26,8 @@ public class Doors : MonoBehaviour
         ra.gameObject.SetActive(false);
         horus.gameObject.SetActive(false);
         bastet.gameObject.SetActive(false);
+
+        _animator = GetComponent<Animator>();
     }
 
     void Update()
@@ -38,6 +45,11 @@ public class Doors : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.B))
         {
             bastet.gameObject.SetActive(true);
+        }
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            OpenDoor();
         }
     }
 
@@ -84,4 +96,31 @@ public class Doors : MonoBehaviour
             textinfo.gameObject.SetActive(false);
         }
     }
+
+
+    public void OpenDoor()
+    {
+        //StartCoroutine(OpenSmoothly());
+        //transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, 1000, 0), 2 * Time.deltaTime);
+        //Quaternion rotation = Quaternion.Euler(0, 30, 0);
+        _animator.SetBool("ShouldOpen", true);
+    }
+
+    /*IEnumerator OpenSmoothly()
+    {
+        float x = transform.rotation.x;
+        float y = OpenPosition;
+        float z = transform.rotation.z;
+
+        float t = 0;
+        while (t < Duration)
+        {
+            t += Time.deltaTime;
+
+            y = Mathf.Lerp(ClosePosition, OpenPosition, t / Duration);
+            //transform.position = new Vector3(x, y, z);
+            Quaternion rotation = Quaternion.Euler(x, y, z);
+            yield return null;
+        }
+    }*/
 }
