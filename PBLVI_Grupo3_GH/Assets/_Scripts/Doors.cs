@@ -35,21 +35,25 @@ public class Doors : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R))
         {
             ra.gameObject.SetActive(true);
+            textinfo.gameObject.SetActive(false);
         }
 
         if (Input.GetKeyDown(KeyCode.H))
         {
             horus.gameObject.SetActive(true);
+            textinfo.gameObject.SetActive(false);
         }
 
         if (Input.GetKeyDown(KeyCode.B))
         {
             bastet.gameObject.SetActive(true);
+            textinfo.gameObject.SetActive(false);
         }
 
         if (Input.GetKeyDown(KeyCode.E))
         {
             OpenDoor();
+            textinfo.gameObject.SetActive(false);
         }
     }
 
