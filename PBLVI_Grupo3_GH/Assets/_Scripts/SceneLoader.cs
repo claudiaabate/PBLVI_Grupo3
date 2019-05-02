@@ -62,6 +62,7 @@ public class SceneLoader : MonoBehaviour
 
     public void Return()
     {
+        //Vuelta al menú principal (desde controls o credits)
         UIControls.SetActive(false);
         UICredits.SetActive(false);
         ControlsIsOn = false;
