@@ -6,24 +6,30 @@ using UnityEngine.UI;
 public class Inventario : MonoBehaviour
 {
     public GameObject _inventario;
-    public GameObject _monedaRa;
-    public GameObject _monedaHorus;
-    public GameObject _monedaBastet;
 
-    public GameObject _text;
+    public GameObject _ImonedaRa;
+    public GameObject _ImonedaHorus;
+    public GameObject _ImonedaBastet;
 
-    public Text _textContadorRa;
-    public int _monedasRa = 0;
+    public GameObject _textMonedas;
 
+    public GameObject _gemaRa;
+    public GameObject _gemaHorus;
+    public GameObject _gemaBastet;
 
 
     void Start()
     {
         _inventario.SetActive(false);
-        _monedaRa.SetActive(false);
-        _monedaHorus.SetActive(false);
-        _monedaBastet.SetActive(false);
-        
+
+        _ImonedaRa.SetActive(false);
+        _ImonedaHorus.SetActive(false);
+        _ImonedaBastet.SetActive(false);
+
+        _gemaRa.SetActive(false);
+        _gemaHorus.SetActive(false);
+        _gemaBastet.SetActive(false);
+
     }
 
 
@@ -32,8 +38,10 @@ public class Inventario : MonoBehaviour
         if (Input.GetKeyDown("i"))
         {
             _inventario.SetActive(!_inventario.activeSelf);
-            _text.SetActive(false)
-;       }
+
+            _textMonedas.SetActive(false);
+            
+        }
     }
 
 
