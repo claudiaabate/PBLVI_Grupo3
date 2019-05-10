@@ -68,6 +68,7 @@ public class MonedaRa : Inventario
             _monedas = _monedas + 1;
             _monedaBastet.SetActive(false);
         }
+
     }
 
     private void OnTriggerExit(Collider other)
