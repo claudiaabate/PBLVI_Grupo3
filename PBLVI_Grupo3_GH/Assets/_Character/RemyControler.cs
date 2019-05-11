@@ -13,6 +13,7 @@ public class RemyControler : MonoBehaviour
     private Vector3 perpendicular = Vector3.zero;
 
     private Animator animator = null;
+    public bool playerInteractuando = false;
 
     // Start is called before the first frame update
     void Start()
@@ -56,8 +57,11 @@ public class RemyControler : MonoBehaviour
             transform.position += movement;
             animator.SetBool("is_moving", true);
 
-            double targetDegrees = Mathf.Atan2(movement.x, movement.z) * 57.29577;
-            transform.rotation = Quaternion.AngleAxis((float)targetDegrees, Vector3.up);
+            if (!playerInteractuando)
+            {
+                double targetDegrees = Mathf.Atan2(movement.x, movement.z) * 57.29577;
+                transform.rotation = Quaternion.AngleAxis((float)targetDegrees, Vector3.up);
+            }
         }
         else
         {
