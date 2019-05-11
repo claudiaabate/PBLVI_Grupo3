@@ -25,12 +25,23 @@ public class CheckPuzzleBastet : MonoBehaviour
     bool correct4 = false;
 
     private Animator _animator;
+    private Animator _animator2;
     public GameObject info;
+
+    public GameObject PuzzleBastet2;
+    public GameObject PistaRa;
+    public GameObject PistaButton;
+    public GameObject Congrats;
 
     void Start()
     {
-        _animator = info.GetComponent<Animator>();
-        StartCoroutine(WaitTime());
+        if (PuzzleBastet2.activeInHierarchy)
+        {
+            _animator = info.GetComponent<Animator>();
+            _animator2 = PistaRa.GetComponent<Animator>();
+            StartCoroutine(WaitTime());
+            StartCoroutine(WaitTime2());
+        }
     }
 
     IEnumerator WaitTime()
@@ -39,31 +50,35 @@ public class CheckPuzzleBastet : MonoBehaviour
         _animator.SetBool("Bye", true);
     }
 
+    IEnumerator WaitTime2()
+    {
+        yield return new WaitForSeconds(30f);
+        PistaButton.SetActive(true);
+    }
+
+    IEnumerator WaitTime3()
+    {
+        yield return new WaitForSeconds(2.5f);
+        _animator2.SetBool("Bye", true);
+    }
+
     // Update is called once per frame
     void Update()
     {
-        if (Card1.gameObject.transform.childCount > 0)
+        if (Card1.gameObject.transform.childCount > 0 && Card2.gameObject.transform.childCount > 0 && Card3.gameObject.transform.childCount > 0 && Card4.gameObject.transform.childCount > 0)
         {
             Check1();
-        }
-
-        if (Card2.gameObject.transform.childCount > 0)
-        {
             Check2();
-        }
-
-        if (Card3.gameObject.transform.childCount > 0)
-        {
             Check3();
-        }
-
-        if (Card4.gameObject.transform.childCount > 0)
-        {
             Check4();
         }
 
         if (correct1 && correct2 && correct3 && correct4)
+        {
             Debug.Log("ACABADO");
+            Congrats.SetActive(true);
+        }
+
     }
 
     void Check1()
@@ -72,8 +87,8 @@ public class CheckPuzzleBastet : MonoBehaviour
 
         if (CardChild1 == CorrectCard1)
             correct1 = true;
-        if (correct1)
-            Debug.Log("correct1");
+        //if (correct1)
+            //Debug.Log("correct1");
 
     }
 
@@ -83,8 +98,8 @@ public class CheckPuzzleBastet : MonoBehaviour
 
         if (CardChild2 == CorrectCard2)
             correct2 = true;
-        if (correct2)
-            Debug.Log("correct2");
+        //if (correct2)
+            //Debug.Log("correct2");
     }
 
     void Check3()
@@ -93,8 +108,8 @@ public class CheckPuzzleBastet : MonoBehaviour
 
         if (CardChild3 == CorrectCard3)
             correct3 = true;
-        if (correct3)
-            Debug.Log("correct3");
+        //if (correct3)
+            //Debug.Log("correct3");
     }
 
     void Check4()
@@ -103,7 +118,20 @@ public class CheckPuzzleBastet : MonoBehaviour
 
         if (CardChild4 == CorrectCard4)
             correct4 = true;
-        if (correct4)
-            Debug.Log("correct4");
+        //if (correct4)
+            //Debug.Log("correct4");
+    }
+
+    public void Back()
+    {
+        PuzzleBastet2.SetActive(false);
+    }
+
+    public void Pista()
+    {
+        PistaRa.SetActive(true);
+        StartCoroutine(WaitTime3());
+        PistaButton.SetActive(false);
     }
 }
+
