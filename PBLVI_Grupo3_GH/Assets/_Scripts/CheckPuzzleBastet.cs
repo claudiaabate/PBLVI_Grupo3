@@ -27,6 +27,7 @@ public class CheckPuzzleBastet : MonoBehaviour
     private Animator _animator;
     private Animator _animator2;
     private Animator _fade;
+    //private Animator _fade2;
     public GameObject info;
 
     public GameObject PuzzleBastet2;
@@ -34,6 +35,9 @@ public class CheckPuzzleBastet : MonoBehaviour
     public GameObject PistaButton;
     public GameObject Congrats;
     public GameObject Fade;
+    //public GameObject Fade2;
+
+    public GameObject Char;
 
     void Start()
     {
@@ -44,6 +48,7 @@ public class CheckPuzzleBastet : MonoBehaviour
             _animator2 = PistaRa.GetComponent<Animator>();
             StartCoroutine(WaitTime2());
             _fade = Fade.GetComponent<Animator>();
+            //_fade2 = Fade.GetComponent<Animator>();
         }
     }
 
@@ -71,6 +76,13 @@ public class CheckPuzzleBastet : MonoBehaviour
         _fade.SetBool("fade", true);
     }
 
+    /*IEnumerator WaitTime5()
+    {
+        yield return new WaitForSeconds(2.5f);
+        Fade.SetActive(false);
+        _fade2.SetBool("fade", true);
+    }*/
+
     // Update is called once per frame
     void Update()
     {
@@ -86,6 +98,9 @@ public class CheckPuzzleBastet : MonoBehaviour
         {
             Congrats.SetActive(true);
             StartCoroutine(WaitTime4());
+            Char.transform.position = new Vector3(0, 0, 0);
+            //StartCoroutine(WaitTime5());
+            //_fade2.SetBool("fade", true);
         }
 
     }
