@@ -74,6 +74,8 @@ public class CheckPuzzleBastet : MonoBehaviour
     {
         yield return new WaitForSeconds(2.5f);
         _fade.SetBool("fade", true);
+        yield return new WaitForSeconds(2.0f);
+        PuzzleBastet2.SetActive(false);
     }
 
     /*IEnumerator WaitTime5()
@@ -98,7 +100,8 @@ public class CheckPuzzleBastet : MonoBehaviour
         {
             Congrats.SetActive(true);
             StartCoroutine(WaitTime4());
-            Char.transform.position = new Vector3(0, 0, 0);
+            Char.transform.position = new Vector3(-0.68f, 8.49f, 1.51f);
+            Char.transform.rotation = new Quaternion(0, 180, 0, 0);
             //StartCoroutine(WaitTime5());
             //_fade2.SetBool("fade", true);
         }
