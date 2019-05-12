@@ -36,10 +36,10 @@ public class EncenderAntorcha : MonoBehaviour
 
         }
 
-        else if (plyr.tag=="Player" && Input.GetKeyDown(KeyCode.E) && on)
-        {
-            TurnOff();
-        }
+        //else if (plyr.tag=="Player" && Input.GetKeyDown(KeyCode.E) && on)
+        //{
+        //    TurnOff();
+        //}
     }
 
     void TurnOn()
