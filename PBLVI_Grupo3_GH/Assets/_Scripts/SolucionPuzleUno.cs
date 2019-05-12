@@ -14,13 +14,15 @@ public class SolucionPuzleUno : MonoBehaviour
     public EncenderAntorcha Vatra_08;
     
 
-    public Material Material_WIN;
-    public Material Material_LOSE;
+    //public Material Material_WIN;
+    //public Material Material_LOSE;
     private Renderer _renderer;
+    public Animator anim;
 
     void Start()
     {
         _renderer = transform.GetComponent<Renderer>();
+        anim.GetComponent<Animator>();
     }
 
 
@@ -38,14 +40,15 @@ public class SolucionPuzleUno : MonoBehaviour
         
         {
             Debug.Log("ES CORRECTE");
-            _renderer.material = Material_WIN;
+            anim.Play("EsconditeRa");
+            //_renderer.material = Material_WIN;
 
         }
 
         else
         {
             Debug.Log("ES INCORRECTE");
-            _renderer.material = Material_LOSE;
+            //_renderer.material = Material_LOSE;
         }
     }
 }
