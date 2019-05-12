@@ -17,7 +17,7 @@ public class EncenderAntorcha : MonoBehaviour
         antorcha = GetComponent<Light>();
         on = false;
         antorcha.enabled = false;
-        Debug.Log("EL objeto" + gameObject.name + "Tiene la booleana en: " + incorrecta);
+        //Debug.Log("EL objeto" + gameObject.name + "Tiene la booleana en: " + incorrecta);
     }
 
     private void OnTriggerStay(Collider plyr)
@@ -25,21 +25,21 @@ public class EncenderAntorcha : MonoBehaviour
         if(plyr.tag == "Player" && Input.GetKeyDown(KeyCode.E) && !on && !incorrecta)
         {
             TurnOn();
-            Debug.Log("EL objeto" + gameObject.name + "Tiene la booleana en: " + incorrecta + " por lo tanto  esta esta bien");
+            //Debug.Log("EL objeto" + gameObject.name + "Tiene la booleana en: " + incorrecta + " por lo tanto  esta esta bien");
         }
 
         else if (plyr.tag == "Player" && Input.GetKeyDown(KeyCode.E) && !on && incorrecta)
         {
             RespuestaIncorrecta();
 
-            Debug.Log("EL objeto" + gameObject.name + "Tiene la booleana en: " + incorrecta + " por lo tanto  esta esta mal");
+            //Debug.Log("EL objeto" + gameObject.name + "Tiene la booleana en: " + incorrecta + " por lo tanto  esta esta mal");
 
         }
 
-        //else if (plyr.tag=="Player" && Input.GetKeyDown(KeyCode.E) && on)
-        //{
-        //    TurnOff();
-        //}
+        else if (plyr.tag == "Player" && Input.GetKeyDown(KeyCode.E) && on)
+        {
+            TurnOff();
+        }
     }
 
     void TurnOn()
@@ -56,7 +56,7 @@ public class EncenderAntorcha : MonoBehaviour
 
     void RespuestaIncorrecta()
     {
-        Debug.Log("HAS COMETIDO UN ERROR");
+        //Debug.Log("HAS COMETIDO UN ERROR");
 
         ControladoraLlums.TurnOffAll();
     }

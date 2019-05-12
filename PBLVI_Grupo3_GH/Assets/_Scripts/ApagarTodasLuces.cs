@@ -6,6 +6,7 @@ public class ApagarTodasLuces : MonoBehaviour
 {
 
     public Light[] lights;
+    public EncenderAntorcha[] inputBool;
     public Color ColorInicial;
 
     public void TurnOffAll()
@@ -24,13 +25,8 @@ public class ApagarTodasLuces : MonoBehaviour
         }
 
         StartCoroutine(Espera());
-
-        IEnumerator Espera()
-        {
-            print(Time.time);
-            yield return new WaitForSeconds(5);
-            print(Time.time);
-        }
+        
+        
 
 
 
@@ -42,15 +38,31 @@ public class ApagarTodasLuces : MonoBehaviour
     {
         foreach (Light light in lights)
         {
-
+            
+            
             light.color = ColorInicial;
             light.enabled = false;
 
 
 
         }
+
+        for (int i = 0; i < inputBool.Length; i++)
+        {
+            inputBool[i].on = false;
+        }
+
+
     }
-    
-    
-   
+
+    IEnumerator Espera()
+    {
+       
+        yield return new WaitForSeconds(2f);
+        ResetAllLights();
+
+    }
+
+
+
 }

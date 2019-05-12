@@ -12,10 +12,7 @@ public class SolucionPuzleUno : MonoBehaviour
     public EncenderAntorcha Vatra_06;
     public EncenderAntorcha Vatra_07;
     public EncenderAntorcha Vatra_08;
-    public EncenderAntorcha Vatra_09;
-    public EncenderAntorcha Vatra_10;
-    public EncenderAntorcha Vatra_11;
-    public EncenderAntorcha Vatra_12;
+    
 
     public Material Material_WIN;
     public Material Material_LOSE;
