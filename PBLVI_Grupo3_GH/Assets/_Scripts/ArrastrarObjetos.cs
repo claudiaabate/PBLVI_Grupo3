@@ -3,6 +3,7 @@
 public class ArrastrarObjetos : MonoBehaviour
 {
     public GameObject ui;
+
     public float speed = 2f;
     public float peso = 2f;
 
@@ -11,6 +12,7 @@ public class ArrastrarObjetos : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             ui.SetActive(true);
+            other.gameObject.GetComponent<RemyControler>().playerInteractuando = true;
         }
     }
 
@@ -19,7 +21,6 @@ public class ArrastrarObjetos : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             float horizontal = Input.GetAxis("Horizontal");
-
             float vertical = Input.GetAxis("Vertical");
 
             Vector3 velocity = new Vector3(horizontal, 0, vertical);
@@ -27,10 +28,10 @@ public class ArrastrarObjetos : MonoBehaviour
             if (Input.GetKey(KeyCode.F))
             {
                 other.gameObject.GetComponent<RemyControler>().playerInteractuando = true;
+                ui.SetActive(false);
                 velocity = speed * velocity;
                 transform.position += velocity * Time.deltaTime;
             }
-
         }
     }
 

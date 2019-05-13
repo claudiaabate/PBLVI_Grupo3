@@ -34,7 +34,7 @@ public class ControlPersonaje : MonoBehaviour
         Quaternion cameraRelativeRotation = Quaternion.FromToRotation(Vector3.forward, cameraForward);
         Vector3 lookToward = cameraRelativeRotation * moveInput;
 
-        if (moveInput.sqrMagnitude > 0)
+        if (moveInput.sqrMagnitude > 0 && playerInteractuando == false)
         {
             Ray lookRay = new Ray(transform.position, lookToward);
             transform.LookAt(lookRay.GetPoint(1));
