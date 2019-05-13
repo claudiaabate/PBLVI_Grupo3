@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SolucionPuzleUno : MonoBehaviour
+public class SolucionPuzleUno : Gemas
 {
     public EncenderAntorcha Vatra_01;
     public EncenderAntorcha Vatra_02;
@@ -28,7 +28,7 @@ public class SolucionPuzleUno : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.T))
         {
             CheckTheResult();
         }
@@ -40,6 +40,7 @@ public class SolucionPuzleUno : MonoBehaviour
         
         {
             Debug.Log("ES CORRECTE");
+            _gemaRa.SetActive(true);
             anim.Play("EsconditeRa");
             //_renderer.material = Material_WIN;
 

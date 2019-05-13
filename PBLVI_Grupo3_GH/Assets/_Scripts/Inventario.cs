@@ -13,9 +13,9 @@ public class Inventario : MonoBehaviour
 
     public GameObject _textMonedas;
 
-    public GameObject _gemaRa;
-    public GameObject _gemaHorus;
-    public GameObject _gemaBastet;
+    public GameObject _IgemaRa;
+    public GameObject _IgemaHorus;
+    public GameObject _IgemaBastet;
 
 
     void Start()
@@ -26,9 +26,9 @@ public class Inventario : MonoBehaviour
         _ImonedaHorus.SetActive(false);
         _ImonedaBastet.SetActive(false);
 
-        _gemaRa.SetActive(false);
-        _gemaHorus.SetActive(false);
-        _gemaBastet.SetActive(false);
+        _IgemaRa.SetActive(false);
+        _IgemaHorus.SetActive(false);
+        _IgemaBastet.SetActive(false);
 
     }
 
