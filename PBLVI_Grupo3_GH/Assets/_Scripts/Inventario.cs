@@ -34,9 +34,12 @@ public class Inventario : MonoBehaviour
 
 
     void Update()
+
     {
         if (Input.GetKeyDown("i"))
         {
+
+            Debug.Log("Entracondicion Tecla detectada inverntario");
             _inventario.SetActive(!_inventario.activeSelf);
 
             _textMonedas.SetActive(false);

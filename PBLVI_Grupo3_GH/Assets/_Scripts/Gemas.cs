@@ -18,7 +18,7 @@ public class Gemas : Inventario
 
     void Start()
     {
-       _gemaRa.SetActive(false);
+       _gemaRa.SetActive(true);
         //_gemaHorus.SetActive(false);
        _gemaBastet.SetActive(false);
     }
@@ -27,8 +27,10 @@ public class Gemas : Inventario
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("COLLISION DETECTADA");
         if (enter)
         {
+            Debug.Log("ENTRA CONDICION");
             _textGemas.SetActive(true);
         }
     }
