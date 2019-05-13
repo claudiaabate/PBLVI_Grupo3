@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class EncenderAntorcha : MonoBehaviour
 {
-    
+
     public bool on = false;
     public bool incorrecta = false;
-    
+    public GameObject ui;
+
     private Light antorcha;
     public ApagarTodasLuces ControladoraLlums;
-    
+
 
     void Start()
     {
@@ -20,15 +21,34 @@ public class EncenderAntorcha : MonoBehaviour
         //Debug.Log("EL objeto" + gameObject.name + "Tiene la booleana en: " + incorrecta);
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            ui.SetActive(true);
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            ui.SetActive(false);
+
+        }
+    }
+
     private void OnTriggerStay(Collider plyr)
     {
-        if(plyr.tag == "Player" && Input.GetKeyDown(KeyCode.E) && !on && !incorrecta)
+
+
+        if (plyr.tag == "Player" && Input.GetKeyDown(KeyCode.T) && !on && !incorrecta)
         {
             TurnOn();
             //Debug.Log("EL objeto" + gameObject.name + "Tiene la booleana en: " + incorrecta + " por lo tanto  esta esta bien");
         }
 
-        else if (plyr.tag == "Player" && Input.GetKeyDown(KeyCode.E) && !on && incorrecta)
+        else if (plyr.tag == "Player" && Input.GetKeyDown(KeyCode.T) && !on && incorrecta)
         {
             RespuestaIncorrecta();
 
@@ -36,7 +56,7 @@ public class EncenderAntorcha : MonoBehaviour
 
         }
 
-        else if (plyr.tag == "Player" && Input.GetKeyDown(KeyCode.E) && on)
+        else if (plyr.tag == "Player" && Input.GetKeyDown(KeyCode.T) && on)
         {
             TurnOff();
         }
