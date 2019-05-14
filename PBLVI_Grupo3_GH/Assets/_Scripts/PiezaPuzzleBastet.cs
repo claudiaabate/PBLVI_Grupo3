@@ -6,16 +6,19 @@ public class PiezaPuzzleBastet : Gemas
 {
     public GameObject _pieza;
     public GameObject _estatuta;
-
+    public GameObject _esconditeBastet;
     public GameObject _estatuaSin;
 
     public GameObject _textPieza;
 
+    private Animator _animatorGBastet;
 
     void Start()
     {
         _estatuta.SetActive(false);
-        _textPieza.SetActive(false); 
+        _textPieza.SetActive(false);
+
+        _animatorGBastet = _esconditeBastet.GetComponent<Animator>();
     }
 
 
@@ -33,10 +36,10 @@ public class PiezaPuzzleBastet : Gemas
         if (Input.GetKeyDown(KeyCode.B))
         {
             _pieza.SetActive(false);
+            _textPieza.SetActive(false);
             _estatuaSin.SetActive(false);
             _estatuta.SetActive(true);
-            _gemaBastet.SetActive(true);
-
+            _animatorGBastet.SetBool("Out", true);
         }
 
     }
