@@ -5253,14 +5253,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 178992474}
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.5388, y: 0, z: 0.702}
   m_LocalScale: {x: 0.28429282, y: 0.28429282, z: 0.28429282}
   m_Children:
   - {fileID: 1213055479}
   m_Father: {fileID: 1174315969882777851}
   m_RootOrder: 11
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &182358695
 GameObject:
   m_ObjectHideFlags: 0
@@ -6898,7 +6898,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 256337444}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bcc92341558924858813534bc7725472, type: 3}
+  m_Script: {fileID: 11500000, guid: 29bc8600e122d41d49f262dd355ccb58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   textinfo: {fileID: 1604452641}
@@ -6908,6 +6908,7 @@ MonoBehaviour:
   exit: 1
   moveSpeed: 0
   _animator: {fileID: 178992475}
+  RaPuerta: {fileID: 178992474}
 --- !u!65 &256337446
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13944,7 +13945,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 725025455}
+      - m_Target: {fileID: 0}
         m_MethodName: Salir
         m_Mode: 1
         m_Arguments:
@@ -17466,7 +17467,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &684306768
 RectTransform:
   m_ObjectHideFlags: 0
@@ -18138,7 +18139,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 725025454}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bcc92341558924858813534bc7725472, type: 3}
+  m_Script: {fileID: 11500000, guid: dee40c8d3f24c4d3f8961bad304bd4eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   textinfo: {fileID: 341565604}
@@ -18147,7 +18148,6 @@ MonoBehaviour:
   stay: 1
   exit: 1
   moveSpeed: 0
-  _animator: {fileID: 0}
 --- !u!65 &725025456
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20943,7 +20943,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &875147278
 RectTransform:
   m_ObjectHideFlags: 0
@@ -24970,7 +24970,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1026792202
 RectTransform:
   m_ObjectHideFlags: 0
@@ -29174,7 +29174,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1172502455
 RectTransform:
   m_ObjectHideFlags: 0
@@ -32673,12 +32673,12 @@ PrefabInstance:
     - target: {fileID: 8760976163529122590, guid: de24c994ceaa04132b13cacb99617a57,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8.41
+      value: 0.009
       objectReference: {fileID: 0}
     - target: {fileID: 8760976163529122590, guid: de24c994ceaa04132b13cacb99617a57,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 7.58
+      value: 2.96
       objectReference: {fileID: 0}
     - target: {fileID: 8760976163529122590, guid: de24c994ceaa04132b13cacb99617a57,
         type: 3}
@@ -41955,7 +41955,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1692751227}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bcc92341558924858813534bc7725472, type: 3}
+  m_Script: {fileID: 11500000, guid: 2d569afdb4a9d46c0b1f31f716fcde45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   textinfo: {fileID: 341565604}
@@ -41964,7 +41964,6 @@ MonoBehaviour:
   stay: 1
   exit: 1
   moveSpeed: 0
-  _animator: {fileID: 0}
 --- !u!65 &1692751229
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -45581,7 +45580,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1844379383
 RectTransform:
   m_ObjectHideFlags: 0

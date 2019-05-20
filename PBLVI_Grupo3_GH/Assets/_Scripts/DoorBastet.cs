@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Doors : MonoBehaviour
+public class DoorBastet : MonoBehaviour
 {
     public GameObject textinfo;
     public GameObject panel;
@@ -13,21 +13,22 @@ public class Doors : MonoBehaviour
     public bool exit = true;
     public float moveSpeed;
 
-    public Animator _animator;
+    //public Animator _animator;
 
     public static bool GameIsPaused = false;
 
     void Start()
     {
         textinfo.gameObject.SetActive(false);
-        //textinfo2.gameObject.SetActive(false);
         panel.gameObject.SetActive(false);
-
-        _animator = GetComponent<Animator>();
     }
 
     void Update()
     {
+        if (panel.activeInHierarchy && Input.GetKeyDown(KeyCode.Escape))
+        {
+            Salir();
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -36,10 +37,6 @@ public class Doors : MonoBehaviour
         {
             textinfo.gameObject.SetActive(true);
         }
-        /*else
-        {
-            textinfo2.gameObject.SetActive(true);
-        }*/
     }
 
     private void OnTriggerStay(Collider other)
@@ -49,34 +46,6 @@ public class Doors : MonoBehaviour
             panel.gameObject.SetActive(true);
             textinfo.gameObject.SetActive(false);
             Pause();
-            Salir();
-        }
-
-
-            /*else
-            {
-                textinfo2.gameObject.SetActive(true);
-                panel.gameObject.SetActive(false);
-                Resume();
-            }*/
-
-        /*if (Input.GetKeyDown(KeyCode.R))
-        {
-            panel.gameObject.SetActive(true);
-            textinfo2.gameObject.SetActive(false);
-            Pause();
-        }
-
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            OpenDoor();
-            textinfo.gameObject.SetActive(false);
-        }*/
-
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            OpenDoor();
-            textinfo.gameObject.SetActive(false);
         }
     }
 
@@ -86,15 +55,6 @@ public class Doors : MonoBehaviour
         {
             textinfo.gameObject.SetActive(false);
         }
-        /*else
-        {
-            textinfo2.gameObject.SetActive(false);
-        }*/
-    }
-
-    public void OpenDoor()
-    {
-        _animator.SetBool("ShouldOpen", true);
     }
 
     public void Resume()
@@ -108,13 +68,11 @@ public class Doors : MonoBehaviour
         Time.timeScale = 0f;
         GameIsPaused = true;
     }
+
     public void Salir()
     {
-        //if (Input.GetKeyDown(KeyCode.Escape))
-        //{
             panel.gameObject.SetActive(false);
-                textinfo.gameObject.SetActive(true);
-                Resume();
-        //}
+            textinfo.gameObject.SetActive(true);
+            Resume();
     }
 }
