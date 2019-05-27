@@ -19,7 +19,7 @@ public class SolucionPuzleUno : Gemas
     private Renderer _renderer;
     public Animator anim;
 
-    public GameObject camera_principal;
+    //public GameObject camera_principal;
     public GameObject camera_gemaRa;
 
     public GameObject Person;
@@ -49,6 +49,9 @@ public class SolucionPuzleUno : Gemas
             anim.Play("EsconditeRa");
 
             StartCoroutine(WaitTime());
+            /*camera_principal.gameObject.SetActive(false);
+            camera_gemaRa.gameObject.SetActive(true);
+            Person.gameObject.SetActive(false);*/
             //_renderer.material = Material_WIN;
 
         }

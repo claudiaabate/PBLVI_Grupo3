@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GemaHorus : MonoBehaviour
+public class GemaHorus : Gemas
 {
     public float PesoCorrecto = 6f;
     private float PesoPuzzle = 0f;
@@ -10,6 +10,11 @@ public class GemaHorus : MonoBehaviour
     public GameObject _esconditeHorus;
 
     private Animator _animator;
+
+    //public GameObject camera_principal;
+    public GameObject camera_gemaHorus;
+
+    public GameObject Person;
 
     void Start()
     {
@@ -28,6 +33,21 @@ public class GemaHorus : MonoBehaviour
         if(PesoCorrecto == PesoPuzzle)
         {
             _animator.SetBool("Up", true);
+            StartCoroutine(WaitTime());
+            /*camera_principal.gameObject.SetActive(false);
+            camera_gemaHorus.gameObject.SetActive(true);
+            Person.gameObject.SetActive(false);*/
         }
+    }
+
+    IEnumerator WaitTime()
+    {
+        camera_principal.gameObject.SetActive(false);
+        camera_gemaHorus.gameObject.SetActive(true);
+        Person.gameObject.SetActive(false);
+        yield return new WaitForSeconds(5f);
+        camera_principal.gameObject.SetActive(true);
+        camera_gemaHorus.gameObject.SetActive(false);
+        Person.gameObject.SetActive(true);
     }
 }

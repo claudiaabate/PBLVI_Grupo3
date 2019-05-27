@@ -13,6 +13,11 @@ public class PiezaPuzzleBastet : Gemas
 
     private Animator _animatorGBastet;
 
+    //public GameObject camera_principal;
+    public GameObject camera_gemaBastet;
+
+    public GameObject Person;
+
     void Start()
     {
         _estatuta.SetActive(false);
@@ -40,8 +45,22 @@ public class PiezaPuzzleBastet : Gemas
             _estatuaSin.SetActive(false);
             _estatuta.SetActive(true);
             _animatorGBastet.SetBool("Out", true);
+            StartCoroutine(WaitTime());
+            /*camera_principal.gameObject.SetActive(false);
+            camera_gemaBastet.gameObject.SetActive(true);
+            Person.gameObject.SetActive(false);*/
         }
 
     }
 
+    IEnumerator WaitTime()
+    {
+        camera_principal.gameObject.SetActive(false);
+        camera_gemaBastet.gameObject.SetActive(true);
+        Person.gameObject.SetActive(false);
+        yield return new WaitForSeconds(5f);
+        camera_principal.gameObject.SetActive(true);
+        camera_gemaBastet.gameObject.SetActive(false);
+        Person.gameObject.SetActive(true);
+    }
 }
