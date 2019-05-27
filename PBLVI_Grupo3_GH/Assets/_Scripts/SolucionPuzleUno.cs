@@ -48,7 +48,7 @@ public class SolucionPuzleUno : Gemas
             _gemaRa.SetActive(true);
             anim.Play("EsconditeRa");
 
-            StartCoroutine(WaitTime());
+            StartCoroutine(WaitTime1());
             /*camera_principal.gameObject.SetActive(false);
             camera_gemaRa.gameObject.SetActive(true);
             Person.gameObject.SetActive(false);*/
@@ -63,7 +63,7 @@ public class SolucionPuzleUno : Gemas
         }
     }
 
-    IEnumerator WaitTime()
+    IEnumerator WaitTime1()
     {
         camera_principal.gameObject.SetActive(false);
         camera_gemaRa.gameObject.SetActive(true);

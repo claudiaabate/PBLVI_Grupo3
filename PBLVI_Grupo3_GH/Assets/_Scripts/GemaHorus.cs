@@ -16,6 +16,8 @@ public class GemaHorus : Gemas
 
     public GameObject Person;
 
+    bool first = true;
+
     void Start()
     {
         _animator = _esconditeHorus.GetComponent<Animator>();
@@ -33,14 +35,18 @@ public class GemaHorus : Gemas
         if(PesoCorrecto == PesoPuzzle)
         {
             _animator.SetBool("Up", true);
-            StartCoroutine(WaitTime());
+            if (first)
+            {
+                StartCoroutine(WaitTime2());
+                first = false;
+            }
             /*camera_principal.gameObject.SetActive(false);
             camera_gemaHorus.gameObject.SetActive(true);
             Person.gameObject.SetActive(false);*/
         }
     }
 
-    IEnumerator WaitTime()
+    IEnumerator WaitTime2()
     {
         camera_principal.gameObject.SetActive(false);
         camera_gemaHorus.gameObject.SetActive(true);
