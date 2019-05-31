@@ -18,6 +18,8 @@ public class PiezaPuzzleBastet : Gemas
 
     public GameObject Person;
 
+    public GameObject TriggerLastPuzzle;
+
     void Start()
     {
         _estatuta.SetActive(false);
@@ -45,6 +47,7 @@ public class PiezaPuzzleBastet : Gemas
             _estatuaSin.SetActive(false);
             _estatuta.SetActive(true);
             _animatorGBastet.SetBool("Out", true);
+            TriggerLastPuzzle.SetActive(true);
             /*camera_principal.gameObject.SetActive(false);
             camera_gemaBastet.gameObject.SetActive(true);
             Person.gameObject.SetActive(false);*/

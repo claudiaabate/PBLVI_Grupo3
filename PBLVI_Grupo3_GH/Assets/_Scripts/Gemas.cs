@@ -2,8 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
 public class Gemas : Inventario
 {
+    AudioSource audioData;
+    public AudioClip opendoor;
+
     public GameObject _gemaRa;
     public GameObject _gemaHorus;
     public GameObject _gemaBastet;
@@ -41,6 +45,8 @@ public class Gemas : Inventario
 
         _animatorHorus = _puertaHorus.GetComponent<Animator>();
         _animatorBastet = _puertaBastet.GetComponent<Animator>();
+
+        audioData = GetComponent<AudioSource>();
     }
 
 
@@ -67,6 +73,7 @@ public class Gemas : Inventario
             StartCoroutine(WaitTimeHorus());
 
             _animatorHorus.SetBool("ShouldOpen", true);
+            audioData.PlayOneShot(opendoor);
 
             /*camera_principal.gameObject.SetActive(true);
             camera_gemaRa.gameObject.SetActive(false);
@@ -82,6 +89,7 @@ public class Gemas : Inventario
             StartCoroutine(WaitTimeBastet());
 
             _animatorBastet.SetBool("ShouldOpen", true);
+            audioData.PlayOneShot(opendoor);
 
             /*camera_principal.gameObject.SetActive(true);
             camera_gemaHorus.gameObject.SetActive(false);

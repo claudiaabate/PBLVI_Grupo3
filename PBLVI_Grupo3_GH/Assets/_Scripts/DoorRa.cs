@@ -2,8 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
 public class DoorRa : MonoBehaviour
 {
+    AudioSource audioData;
+    public AudioClip info;
+    public AudioClip opendoor;
+
     public GameObject textinfo;
     public GameObject panel;
     //public GameObject textinfo2;
@@ -25,6 +30,8 @@ public class DoorRa : MonoBehaviour
         panel.gameObject.SetActive(false);
 
         _animator = RaPuerta.GetComponent<Animator>();
+
+        audioData = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -45,18 +52,19 @@ public class DoorRa : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.F))
         {
             panel.gameObject.SetActive(true);
             textinfo.gameObject.SetActive(false);
             Pause();
+            audioData.PlayOneShot(info);
             //Salir();
         }
 
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.Q))
         {
             OpenDoor();
-            textinfo.gameObject.SetActive(false);
+            //textinfo.gameObject.SetActive(false);
         }
     }
 
@@ -70,6 +78,11 @@ public class DoorRa : MonoBehaviour
 
     public void OpenDoor()
     {
+        if (_animator.GetBool("ShouldOpen") == false)
+        {
+            audioData.PlayOneShot(opendoor);
+        }
+
         _animator.SetBool("ShouldOpen", true);
     }
 

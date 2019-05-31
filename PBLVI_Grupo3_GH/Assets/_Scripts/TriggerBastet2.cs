@@ -2,8 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
 public class TriggerBastet2 : MonoBehaviour
 {
+    AudioSource audioData;
+    public AudioClip snd_effect;
+
+
     public GameObject textinfo;
     public GameObject puzzle2Bastet;
 
@@ -18,6 +23,8 @@ public class TriggerBastet2 : MonoBehaviour
     {
         textinfo.gameObject.SetActive(false);
         puzzle2Bastet.gameObject.SetActive(false);
+
+        audioData = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -34,10 +41,11 @@ public class TriggerBastet2 : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (Input.GetKeyDown(KeyCode.B))
+        if (Input.GetKeyDown(KeyCode.F))
         {
             textinfo.gameObject.SetActive(false);
             puzzle2Bastet.gameObject.SetActive(true);
+            audioData.PlayOneShot(snd_effect);
             //Pause();
         }
     }

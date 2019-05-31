@@ -39,6 +39,10 @@ public class CheckPuzzleBastet : MonoBehaviour
 
     public GameObject Char;
 
+    public GameObject gemara;
+    public GameObject gemahorus;
+    public GameObject gemabastet;
+
     void Start()
     {
         if (PuzzleBastet2.activeInHierarchy)
@@ -102,6 +106,9 @@ public class CheckPuzzleBastet : MonoBehaviour
             StartCoroutine(WaitTime4());
             Char.transform.position = new Vector3(-0.68f, 8.49f, 1.51f);
             Char.transform.rotation = new Quaternion(0, 180, 0, 0);
+            gemara.SetActive(true);
+            gemahorus.SetActive(true);
+            gemabastet.SetActive(true);
             //StartCoroutine(WaitTime5());
             //_fade2.SetBool("fade", true);
         }

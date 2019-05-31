@@ -2,8 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
 public class DoorHorus : MonoBehaviour
 {
+    AudioSource audioData;
+    public AudioClip info;
+
     public GameObject textinfo;
     public GameObject panel;
     //public GameObject textinfo2;
@@ -21,6 +25,8 @@ public class DoorHorus : MonoBehaviour
     {
         textinfo.gameObject.SetActive(false);
         panel.gameObject.SetActive(false);
+
+        audioData = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -41,11 +47,12 @@ public class DoorHorus : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.F))
         {
             panel.gameObject.SetActive(true);
             textinfo.gameObject.SetActive(false);
             Pause();
+            audioData.PlayOneShot(info);
         }
     }
 
