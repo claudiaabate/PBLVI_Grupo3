@@ -38,14 +38,16 @@ public class Inventario : MonoBehaviour
     {
         if (Input.GetKeyDown("i"))
         {
-
-            Debug.Log("Entracondicion Tecla detectada inverntario");
-            _inventario.SetActive(!_inventario.activeSelf);
+            _inventario.SetActive(true);
 
             _textMonedas.SetActive(false);
             
         }
     }
 
+    public void X()
+    {
+        _inventario.SetActive(false);
+    }
 
 }
