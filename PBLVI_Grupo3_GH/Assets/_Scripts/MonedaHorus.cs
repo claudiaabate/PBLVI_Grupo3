@@ -1,34 +1,31 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class MonedaRa : MonoBehaviour
-{ 
-    public GameObject _monedaRa;
-    public GameObject _ImonedaRa;
+public class MonedaHorus : MonoBehaviour
+{
+    public GameObject _monedaHorus;
+    public GameObject _ImonedaHorus;
 
     public GameObject _textMonedas;
     public GameObject trigger;
 
-
     void Start()
     {
-        _ImonedaRa.SetActive(false);
+        _ImonedaHorus.SetActive(false);
         _textMonedas.SetActive(false);
     }
 
-
-
     private void OnTriggerEnter(Collider other)
     {
-        _monedaRa.SetActive(false);
+        _monedaHorus.SetActive(false);
 
         _textMonedas.SetActive(true);
         StartCoroutine(WaitTime());
 
-        _ImonedaRa.SetActive(true);
-       
+        _ImonedaHorus.SetActive(true);
+
+        trigger.SetActive(false);
     }
 
 

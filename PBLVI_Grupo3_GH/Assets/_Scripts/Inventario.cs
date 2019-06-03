@@ -7,12 +7,6 @@ public class Inventario : MonoBehaviour
 {
     public GameObject _inventario;
 
-    public GameObject _ImonedaRa;
-    public GameObject _ImonedaHorus;
-    public GameObject _ImonedaBastet;
-
-    public GameObject _textMonedas;
-
     public GameObject _IgemaRa;
     public GameObject _IgemaHorus;
     public GameObject _IgemaBastet;
@@ -21,10 +15,6 @@ public class Inventario : MonoBehaviour
     void Start()
     {
         _inventario.SetActive(false);
-
-        _ImonedaRa.SetActive(false);
-        _ImonedaHorus.SetActive(false);
-        _ImonedaBastet.SetActive(false);
 
         _IgemaRa.SetActive(false);
         _IgemaHorus.SetActive(false);
@@ -39,15 +29,12 @@ public class Inventario : MonoBehaviour
         if (Input.GetKeyDown("i"))
         {
             _inventario.SetActive(true);
-
-            _textMonedas.SetActive(false);
-            
         }
     }
+
 
     public void X()
     {
         _inventario.SetActive(false);
     }
-
 }
