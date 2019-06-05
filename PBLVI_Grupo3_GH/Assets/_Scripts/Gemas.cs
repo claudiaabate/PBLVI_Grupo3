@@ -20,6 +20,8 @@ public class Gemas : Inventario
 
 
     public GameObject _textGemas;
+    public GameObject textGeneral;
+
 
     public bool enter = true;
     public bool stay = true;
@@ -38,10 +40,7 @@ public class Gemas : Inventario
 
     void Start()
     {
-       _textGemas.SetActive(false);
-       _gemaRa.SetActive(true);
-       _gemaHorus.SetActive(true);
-       _gemaBastet.SetActive(true);
+        _textGemas.SetActive(false);
 
         _animatorHorus = _puertaHorus.GetComponent<Animator>();
         _animatorBastet = _puertaBastet.GetComponent<Animator>();
@@ -64,11 +63,16 @@ public class Gemas : Inventario
 
     private void OnTriggerStay(Collider other)
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        if (Input.GetKeyDown(KeyCode.R))
         {
+            _IgemaRa.SetActive(true);
+
+            _gemaRa.SetActive(false);
+
             _textGemas.SetActive(false);
 
-            _IgemaRa.SetActive(true);
+            textGeneral.SetActive(true);
+            StartCoroutine(WaitTimeText());
 
             StartCoroutine(WaitTimeHorus());
 
@@ -80,7 +84,7 @@ public class Gemas : Inventario
             Person.gameObject.SetActive(true);*/
         }
 
-        if (Input.GetKeyDown(KeyCode.Alpha2))
+        if (Input.GetKeyDown(KeyCode.H))
         {
             _textGemas.SetActive(false);
 
@@ -96,7 +100,7 @@ public class Gemas : Inventario
             Person.gameObject.SetActive(true);*/
         }
 
-        if (Input.GetKeyDown(KeyCode.Alpha3))
+        if (Input.GetKeyDown(KeyCode.B))
         {
             _textGemas.SetActive(false);
 
@@ -116,7 +120,6 @@ public class Gemas : Inventario
         yield return new WaitForSeconds(3f);
         camera_principal.gameObject.SetActive(true);
         camera_doorHorus.gameObject.SetActive(false);
-        _gemaRa.SetActive(false);
     }
 
     IEnumerator WaitTimeBastet()
@@ -127,5 +130,12 @@ public class Gemas : Inventario
         camera_principal.gameObject.SetActive(true);
         camera_doorBastet.gameObject.SetActive(false);
         _gemaHorus.SetActive(false);
+    }
+
+    IEnumerator WaitTimeText()
+    {
+        yield return new WaitForSeconds(1f);
+        textGeneral.SetActive(false);
+
     }
 }

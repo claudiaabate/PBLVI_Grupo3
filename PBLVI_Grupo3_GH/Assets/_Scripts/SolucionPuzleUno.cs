@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SolucionPuzleUno : Gemas
+public class SolucionPuzleUno : MonoBehaviour
 {
     public EncenderAntorcha Vatra_01;
     public EncenderAntorcha Vatra_02;
@@ -12,14 +12,16 @@ public class SolucionPuzleUno : Gemas
     public EncenderAntorcha Vatra_06;
     public EncenderAntorcha Vatra_07;
     public EncenderAntorcha Vatra_08;
-    
+
+    public GameObject _gemaRa;
 
     //public Material Material_WIN;
     //public Material Material_LOSE;
+
     private Renderer _renderer;
     public Animator anim;
 
-    //public GameObject camera_principal;
+    public GameObject camera_principal;
     public GameObject camera_gemaRa;
 
     public GameObject Person;
@@ -28,6 +30,7 @@ public class SolucionPuzleUno : Gemas
     {
         _renderer = transform.GetComponent<Renderer>();
         anim.GetComponent<Animator>();
+        _gemaRa.SetActive(false);
     }
 
 
