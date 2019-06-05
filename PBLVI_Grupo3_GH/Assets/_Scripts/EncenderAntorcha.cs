@@ -10,7 +10,7 @@ public class EncenderAntorcha : MonoBehaviour
     public GameObject ui;
 
     //private Light antorcha;
-    private Renderer fuego;
+    //private Renderer fuego;
 
     public ApagarTodasLuces ControladoraLlums;
 
@@ -18,7 +18,7 @@ public class EncenderAntorcha : MonoBehaviour
     {
         //antorcha = GetComponent<Light>();
 
-        fuego = GetComponent<MeshRenderer>();
+        //Renderer fuego = this.GetComponent<MeshRenderer>();
 
         Renderer[] rs = GetComponentsInChildren<MeshRenderer>();
         foreach (Renderer r in rs)
@@ -31,7 +31,7 @@ public class EncenderAntorcha : MonoBehaviour
         on = false;
         //antorcha.enabled = false;
 
-        fuego.enabled = false;
+        //gameObject.GetComponent<Renderer>().enabled = false;
 
         //Debug.Log("EL objeto" + gameObject.name + "Tiene la booleana en: " + incorrecta);
     }
@@ -57,21 +57,21 @@ public class EncenderAntorcha : MonoBehaviour
     {
 
 
-        if (plyr.tag == "Player" && Input.GetKeyDown(KeyCode.T) && !on && !incorrecta)
+        if (Input.GetKeyDown(KeyCode.T) && !on && !incorrecta)
         {
             TurnOn();
             //Debug.Log("EL objeto" + gameObject.name + "Tiene la booleana en: " + incorrecta + " por lo tanto  esta esta bien");
         }
 
-        else if (plyr.tag == "Player" && Input.GetKeyDown(KeyCode.T) && !on && incorrecta)
+        else if (Input.GetKeyDown(KeyCode.T) && !on && incorrecta)
         {
             RespuestaIncorrecta();
 
             //Debug.Log("EL objeto" + gameObject.name + "Tiene la booleana en: " + incorrecta + " por lo tanto  esta esta mal");
-
+            //plyr.tag == "Player" && 
         }
 
-        else if (plyr.tag == "Player" && Input.GetKeyDown(KeyCode.T) && on)
+        else if (Input.GetKeyDown(KeyCode.T) && on)
         {
             TurnOff();
         }
@@ -80,8 +80,7 @@ public class EncenderAntorcha : MonoBehaviour
     void TurnOn()
     {
         //antorcha.enabled = !antorcha.enabled;
-
-        fuego.enabled = !fuego.enabled;
+        //gameObject.GetComponent<Renderer>().enabled = !gameObject.GetComponent<Renderer>().enabled;
 
         Renderer[] rs = GetComponentsInChildren<MeshRenderer>();
         foreach (Renderer r in rs)
@@ -98,8 +97,7 @@ public class EncenderAntorcha : MonoBehaviour
     void TurnOff()
     {
         //antorcha.enabled = false;
-
-        fuego.enabled = false;
+        //gameObject.GetComponent<Renderer>().enabled = false;
 
         Renderer[] rs = GetComponentsInChildren<MeshRenderer>();
         foreach (Renderer r in rs)
