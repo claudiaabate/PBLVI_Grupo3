@@ -114,8 +114,22 @@ public class EncenderAntorcha : MonoBehaviour
     {
         //Debug.Log("HAS COMETIDO UN ERROR");
 
+        StartCoroutine(Waitt());
+        Renderer[] rs = GetComponentsInChildren<MeshRenderer>();
+        foreach (Renderer r in rs)
+            r.enabled = !r.enabled;
+
         ControladoraLlums.TurnOffAll();
+
+        /*foreach (Renderer r in rs)
+            r.enabled = false;*/
     }
 
-
+    IEnumerator Waitt()
+    {
+        yield return new WaitForSeconds(2f);
+        Renderer[] rs = GetComponentsInChildren<MeshRenderer>();
+        foreach (Renderer r in rs)
+            r.enabled = false;
+    }
 }
