@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Interactuable
   - MonedaRa
+  - Pared
   layers:
   - Default
   - TransparentFX
