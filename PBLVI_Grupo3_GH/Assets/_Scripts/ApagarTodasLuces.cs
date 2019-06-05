@@ -4,65 +4,43 @@ using UnityEngine;
 
 public class ApagarTodasLuces : MonoBehaviour
 {
-
-    public Light[] lights;
+    //public Light[] lights;
+    public GameObject[] fuego;
     public EncenderAntorcha[] inputBool;
     public Color ColorInicial;
 
     public void TurnOffAll()
-
     {
-        
-        foreach (Light light in lights)
+        Material fire = GetComponent<Renderer>().material;
+
+        foreach (GameObject fuego in fuego)
         {
-
-
-            light.color = Color.red;
-            light.enabled = true;
-
-
-
+            fire.SetColor("_EmissionColor", Color.red);
+            //light.enabled = true;
         }
 
         StartCoroutine(Espera());
-        
-        
-
-
-
-
-        
     }
 
     public void ResetAllLights()
     {
-        foreach (Light light in lights)
+        Material fire = GetComponent<Renderer>().material;
+
+        foreach (GameObject fuego in fuego)
         {
-            
-            
-            light.color = ColorInicial;
-            light.enabled = false;
-
-
-
+            fire.SetColor("_EmissionColor", ColorInicial);
+            //light.enabled = false;
         }
 
         for (int i = 0; i < inputBool.Length; i++)
         {
             inputBool[i].on = false;
         }
-
-
     }
 
     IEnumerator Espera()
     {
-       
         yield return new WaitForSeconds(2f);
         ResetAllLights();
-
     }
-
-
-
 }
