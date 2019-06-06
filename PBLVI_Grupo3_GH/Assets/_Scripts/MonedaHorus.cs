@@ -9,18 +9,24 @@ public class MonedaHorus : Inventario
 
     public GameObject trigger;
 
-
+    public GameObject sound;
+    AudioSource audioData;
+    public AudioClip recogerHorus;
 
     void Start()
     {
         _ImonedaHorus.SetActive(false);
         _textMonedas.SetActive(false);
+
+        audioData = sound.GetComponent<AudioSource>();
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")
         {
+            audioData.PlayOneShot(recogerHorus);
+
             _monedaHorus.SetActive(false);
 
             _textMonedas.SetActive(true);

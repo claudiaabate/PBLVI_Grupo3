@@ -2,8 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
+
 public class EncenderAntorcha : MonoBehaviour
 {
+    AudioSource audioData;
+    public AudioClip fire;
 
     public bool on = false;
     public bool incorrecta = false;
@@ -16,6 +20,7 @@ public class EncenderAntorcha : MonoBehaviour
 
     void Start()
     {
+        audioData = GetComponent<AudioSource>();
         //antorcha = GetComponent<Light>();
 
         //Renderer fuego = this.GetComponent<MeshRenderer>();
@@ -59,6 +64,7 @@ public class EncenderAntorcha : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.T) && !on && !incorrecta)
         {
+            audioData.PlayOneShot(fire);
             TurnOn();
             //Debug.Log("EL objeto" + gameObject.name + "Tiene la booleana en: " + incorrecta + " por lo tanto  esta esta bien");
         }

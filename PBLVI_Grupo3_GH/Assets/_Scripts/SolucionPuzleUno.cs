@@ -16,7 +16,6 @@ public class SolucionPuzleUno : MonoBehaviour
     public GameObject _gemaRa;
 
     public GameObject Material_WIN;
-    //public GameObject Material_LOSE;
 
     private Renderer _renderer;
     public Animator anim;
@@ -26,11 +25,18 @@ public class SolucionPuzleUno : MonoBehaviour
 
     public GameObject Person;
 
+    public GameObject sound;
+    AudioSource audioData;
+    public AudioClip escondite;
+
+
     void Start()
     {
         _renderer = transform.GetComponent<Renderer>();
         anim.GetComponent<Animator>();
         _gemaRa.SetActive(false);
+
+        audioData = sound.GetComponent<AudioSource>();
     }
 
 
@@ -50,6 +56,7 @@ public class SolucionPuzleUno : MonoBehaviour
             //Debug.Log("ES CORRECTE");
             _gemaRa.SetActive(true);
             anim.Play("EsconditeRa");
+            audioData.PlayOneShot(escondite);
 
             StartCoroutine(WaitTime1());
             /*camera_principal.gameObject.SetActive(false);
@@ -62,7 +69,6 @@ public class SolucionPuzleUno : MonoBehaviour
         else
         {
             //Debug.Log("ES INCORRECTE");
-            //Material_LOSE.SetActive(true);
         }
     }
 

@@ -18,9 +18,15 @@ public class GemaHorus : Gemas
 
     bool first = true;
 
+    public GameObject sound;
+    AudioSource audioData2;
+    public AudioClip escondite;
+
+
     void Start()
     {
         _animator = _esconditeHorus.GetComponent<Animator>();
+        audioData2 = sound.GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -35,8 +41,11 @@ public class GemaHorus : Gemas
         if(PesoCorrecto == PesoPuzzle)
         {
             _animator.SetBool("Up", true);
+            
+
             if (first)
             {
+                audioData2.PlayOneShot(escondite);
                 StartCoroutine(WaitTime2());
                 first = false;
             }

@@ -2,11 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(AudioSource))]
 public class Gemas : Inventario
 {
     AudioSource audioData;
     public AudioClip opendoor;
+
+    public GameObject gemasSound;
+    AudioSource audioData1;
+    public AudioClip gemas;
 
     public GameObject _gemaRa;
     public GameObject _gemaHorus;
@@ -42,6 +45,7 @@ public class Gemas : Inventario
         _animatorBastet = _puertaBastet.GetComponent<Animator>();
 
         audioData = GetComponent<AudioSource>();
+        audioData1 = gemasSound.GetComponent<AudioSource>();
     }
 
 
@@ -61,11 +65,11 @@ public class Gemas : Inventario
         {
             _IgemaRa.SetActive(true);
 
-            _gemaRa.SetActive(false);
-
             _textGemas.SetActive(false);
 
             textGeneral.SetActive(true);
+
+            audioData.PlayOneShot(gemas);
 
             StartCoroutine(WaitTimeHorus());
 
@@ -82,6 +86,8 @@ public class Gemas : Inventario
             _textGemas.SetActive(false);
 
             _IgemaHorus.SetActive(true);
+
+            audioData.PlayOneShot(gemas);
 
             StartCoroutine(WaitTimeBastet());
             //Debug.Log("hola");
@@ -100,9 +106,19 @@ public class Gemas : Inventario
             _IgemaBastet.SetActive(true);
 
             _gemaBastet.SetActive(false);
+
+            audioData.PlayOneShot(gemas);
             /*camera_principal.gameObject.SetActive(true);
             camera_gemaBastet.gameObject.SetActive(false);
             Person.gameObject.SetActive(true);*/
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            _textGemas.SetActive(false);
         }
     }
 
@@ -113,6 +129,7 @@ public class Gemas : Inventario
         yield return new WaitForSeconds(3f);
         camera_principal.gameObject.SetActive(true);
         camera_doorHorus.gameObject.SetActive(false);
+        _gemaRa.SetActive(false);
     }
 
     IEnumerator WaitTimeBastet()
