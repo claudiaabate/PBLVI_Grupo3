@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
 public class ArrastrarObjetos : MonoBehaviour
 {
     public GameObject ui;
@@ -9,6 +10,13 @@ public class ArrastrarObjetos : MonoBehaviour
 
     public GameObject parent0;
     public GameObject jugador;
+
+    AudioSource audioData;
+
+    private void Start()
+    {
+        audioData = GetComponent<AudioSource>();
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -41,6 +49,7 @@ public class ArrastrarObjetos : MonoBehaviour
                 //transform.position += velocity * Time.deltaTime;
 
                 gameObject.transform.parent = jugador.transform;
+                audioData.Play();
             }
         }
     }
@@ -60,6 +69,7 @@ public class ArrastrarObjetos : MonoBehaviour
         {
             Debug.Log("no pulsas nada");
             gameObject.transform.parent = parent0.transform;
+            audioData.Stop();
         }
         
     }
