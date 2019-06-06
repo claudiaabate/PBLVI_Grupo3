@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CheckPuzzleBastet : MonoBehaviour
 {
@@ -80,14 +81,9 @@ public class CheckPuzzleBastet : MonoBehaviour
         _fade.SetBool("fade", true);
         yield return new WaitForSeconds(2.0f);
         PuzzleBastet2.SetActive(false);
+        yield return new WaitForSeconds(8.0f);
+        SceneManager.LoadScene(0);
     }
-
-    /*IEnumerator WaitTime5()
-    {
-        yield return new WaitForSeconds(2.5f);
-        Fade.SetActive(false);
-        _fade2.SetBool("fade", true);
-    }*/
 
     // Update is called once per frame
     void Update()
@@ -109,7 +105,6 @@ public class CheckPuzzleBastet : MonoBehaviour
             gemara.SetActive(true);
             gemahorus.SetActive(true);
             gemabastet.SetActive(true);
-            //StartCoroutine(WaitTime5());
             //_fade2.SetBool("fade", true);
         }
 
