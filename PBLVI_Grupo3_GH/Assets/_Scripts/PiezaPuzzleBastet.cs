@@ -23,12 +23,17 @@ public class PiezaPuzzleBastet : Gemas
 
     public GameObject TriggerLastPuzzle;
 
+    public GameObject sound;
+    AudioSource audioData;
+    public AudioClip escondite;
+
     void Start()
     {
         _estatuta.SetActive(false);
         _textPieza.SetActive(false);
 
         _animatorGBastet = _esconditeBastet.GetComponent<Animator>();
+        audioData = sound.GetComponent<AudioSource>();
     }
 
 
@@ -54,6 +59,8 @@ public class PiezaPuzzleBastet : Gemas
             pared2.transform.position = new Vector3(-0.91f, 0f, -0.14f);
             pared1.SetActive(false);
             pared2.SetActive(false);
+
+            audioData.PlayOneShot(escondite);
 
             _animatorGBastet.SetBool("Out", true);
             TriggerLastPuzzle.SetActive(true);
