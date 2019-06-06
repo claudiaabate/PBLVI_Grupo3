@@ -2,12 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MonedaBastet : MonoBehaviour
+public class MonedaBastet : Inventario
 {
     public GameObject _monedaBastet;
-    public GameObject _ImonedaBastet;
 
-    public GameObject _textMonedas;
     public GameObject trigger;
 
     void Start()
@@ -18,14 +16,18 @@ public class MonedaBastet : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        _monedaBastet.SetActive(false);
+        if(other.gameObject.tag == "Player")
+        {
+            _monedaBastet.SetActive(false);
 
-        _textMonedas.SetActive(true);
-        StartCoroutine(WaitTime());
+            _textMonedas.SetActive(true);
+            StartCoroutine(WaitTime());
 
-        _ImonedaBastet.SetActive(true);
+            _ImonedaBastet.SetActive(true);
 
-        trigger.SetActive(false);
+            trigger.SetActive(false);
+        }
+        
     }
 
 

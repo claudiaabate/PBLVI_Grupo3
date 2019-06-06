@@ -3,12 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class MonedaRa : MonoBehaviour
+public class MonedaRa : Inventario
 { 
     public GameObject _monedaRa;
-    public GameObject _ImonedaRa;
 
-    public GameObject _textMonedas;
     public GameObject trigger;
 
 
@@ -22,12 +20,17 @@ public class MonedaRa : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        _monedaRa.SetActive(false);
+        if (other.gameObject.tag == "Player")
+        {
+            _monedaRa.SetActive(false);
 
-        _textMonedas.SetActive(true);
-        StartCoroutine(WaitTime());
+            _textMonedas.SetActive(true);
+            StartCoroutine(WaitTime());
 
-        _ImonedaRa.SetActive(true);
+            _ImonedaRa.SetActive(true);
+            trigger.SetActive(false);
+        }
+        
        
     }
 

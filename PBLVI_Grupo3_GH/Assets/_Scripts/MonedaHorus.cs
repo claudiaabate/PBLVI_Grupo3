@@ -1,14 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class MonedaHorus : MonoBehaviour
+public class MonedaHorus : Inventario
 {
     public GameObject _monedaHorus;
-    public GameObject _ImonedaHorus;
 
-    public GameObject _textMonedas;
     public GameObject trigger;
+
+
 
     void Start()
     {
@@ -18,14 +19,17 @@ public class MonedaHorus : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        _monedaHorus.SetActive(false);
+        if (other.gameObject.tag == "Player")
+        {
+            _monedaHorus.SetActive(false);
 
-        _textMonedas.SetActive(true);
-        StartCoroutine(WaitTime());
+            _textMonedas.SetActive(true);
+            StartCoroutine(WaitTime());
 
-        _ImonedaHorus.SetActive(true);
-
-        trigger.SetActive(false);
+            _ImonedaHorus.SetActive(true);
+            trigger.SetActive(false);
+        }
+       
     }
 
 

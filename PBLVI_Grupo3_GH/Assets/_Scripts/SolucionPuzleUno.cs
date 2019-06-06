@@ -15,8 +15,8 @@ public class SolucionPuzleUno : MonoBehaviour
 
     public GameObject _gemaRa;
 
-    //public Material Material_WIN;
-    //public Material Material_LOSE;
+    public GameObject Material_WIN;
+    //public GameObject Material_LOSE;
 
     private Renderer _renderer;
     public Animator anim;
@@ -55,14 +55,14 @@ public class SolucionPuzleUno : MonoBehaviour
             /*camera_principal.gameObject.SetActive(false);
             camera_gemaRa.gameObject.SetActive(true);
             Person.gameObject.SetActive(false);*/
-            //_renderer.material = Material_WIN;
+            Material_WIN.SetActive(true);
 
         }
 
         else
         {
             //Debug.Log("ES INCORRECTE");
-            //_renderer.material = Material_LOSE;
+            //Material_LOSE.SetActive(true);
         }
     }
 

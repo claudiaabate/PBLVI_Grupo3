@@ -11,6 +11,12 @@ public class Inventario : MonoBehaviour
     public GameObject _IgemaHorus;
     public GameObject _IgemaBastet;
 
+    public GameObject _ImonedaRa;
+    public GameObject _ImonedaHorus;
+    public GameObject _ImonedaBastet;
+
+    public GameObject _textMonedas;
+    public GameObject textGeneral;
 
     void Start()
     {
@@ -29,6 +35,9 @@ public class Inventario : MonoBehaviour
         if (Input.GetKeyDown("i"))
         {
             _inventario.SetActive(true);
+            textGeneral.SetActive(false);
+            _textMonedas.SetActive(false);
+
         }
     }
 

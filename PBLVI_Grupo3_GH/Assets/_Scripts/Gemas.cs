@@ -20,7 +20,7 @@ public class Gemas : Inventario
 
 
     public GameObject _textGemas;
-    public GameObject textGeneral;
+
 
 
     public bool enter = true;
@@ -53,7 +53,7 @@ public class Gemas : Inventario
     private void OnTriggerEnter(Collider other)
     {
         //Debug.Log("COLLISION DETECTADA");
-        if (enter)
+        if (other.gameObject.tag == "Player")
         {
             //Debug.Log("ENTRA CONDICION");
             _textGemas.SetActive(true);
@@ -65,14 +65,14 @@ public class Gemas : Inventario
     {
         if (Input.GetKeyDown(KeyCode.R))
         {
+            _textGemas.SetActive(false);
+
             _IgemaRa.SetActive(true);
 
             _gemaRa.SetActive(false);
 
-            _textGemas.SetActive(false);
-
             textGeneral.SetActive(true);
-            StartCoroutine(WaitTimeText());
+            //StartCoroutine(WaitTimeText());
 
             StartCoroutine(WaitTimeHorus());
 
@@ -89,6 +89,10 @@ public class Gemas : Inventario
             _textGemas.SetActive(false);
 
             _IgemaHorus.SetActive(true);
+
+            _gemaHorus.SetActive(false);
+
+            textGeneral.SetActive(true);
 
             StartCoroutine(WaitTimeBastet());
 
@@ -107,6 +111,8 @@ public class Gemas : Inventario
             _IgemaBastet.SetActive(true);
 
             _gemaBastet.SetActive(false);
+
+            textGeneral.SetActive(true);
             /*camera_principal.gameObject.SetActive(true);
             camera_gemaBastet.gameObject.SetActive(false);
             Person.gameObject.SetActive(true);*/
@@ -129,13 +135,12 @@ public class Gemas : Inventario
         yield return new WaitForSeconds(3f);
         camera_principal.gameObject.SetActive(true);
         camera_doorBastet.gameObject.SetActive(false);
-        _gemaHorus.SetActive(false);
     }
 
-    IEnumerator WaitTimeText()
+    /*IEnumerator WaitTimeText()
     {
         yield return new WaitForSeconds(1f);
         textGeneral.SetActive(false);
 
-    }
+    }*/
 }

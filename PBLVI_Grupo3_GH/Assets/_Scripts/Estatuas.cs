@@ -14,15 +14,10 @@ public class Estatuas : MonoBehaviour
 
     public GameObject _textEstatua;
 
-    public bool enter = true;
-    public bool exit = true;
 
     void Start()
     {
         _textEstatua.SetActive(false);
-
-        pared1.SetActive(false);
-        pared2.SetActive(false);
 
         _animator1 = pared1.GetComponent<Animator>();
         _animator2 = pared2.GetComponent<Animator>();
@@ -31,7 +26,7 @@ public class Estatuas : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (enter)
+        if (other.gameObject.tag == "Player")
         {
             _textEstatua.SetActive(true);
         }
@@ -42,8 +37,6 @@ public class Estatuas : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (exit)
-        {
             _textEstatua.SetActive(false);
 
             pared1.SetActive(true);
@@ -51,8 +44,6 @@ public class Estatuas : MonoBehaviour
 
             _animator1.SetBool("Cierre1", true);
             _animator2.SetBool("Cierre2", true);
-        }
-
     }
 
 }

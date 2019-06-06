@@ -40,7 +40,7 @@ public class PiezaPuzzleBastet : Gemas
 
     private void OnTriggerStay(Collider other)
     {
-        if (Input.GetKeyDown(KeyCode.B))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             StartCoroutine(WaitTime3());
             _textPieza.SetActive(false);
