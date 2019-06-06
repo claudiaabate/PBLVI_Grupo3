@@ -14,7 +14,7 @@ public class PuzzlePesos : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        
+       
     }
 
     private void OnTriggerExit(Collider other)

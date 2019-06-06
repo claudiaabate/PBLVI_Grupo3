@@ -9,6 +9,9 @@ public class PiezaPuzzleBastet : Gemas
     public GameObject _esconditeBastet;
     public GameObject _estatuaSin;
 
+    public GameObject pared1;
+    public GameObject pared2;
+
     public GameObject _textPieza;
 
     private Animator _animatorGBastet;
@@ -31,7 +34,7 @@ public class PiezaPuzzleBastet : Gemas
 
     private void OnTriggerEnter(Collider other)
     {
-        if (enter)
+        if (other.gameObject.tag == "Player")
         {
             _textPieza.SetActive(true);
         }
@@ -46,6 +49,12 @@ public class PiezaPuzzleBastet : Gemas
             _textPieza.SetActive(false);
             _estatuaSin.SetActive(false);
             _estatuta.SetActive(true);
+
+            pared1.transform.position = new Vector3(-1.87f, 0f, -0.14f);
+            pared2.transform.position = new Vector3(-0.91f, 0f, -0.14f);
+            pared1.SetActive(false);
+            pared2.SetActive(false);
+
             _animatorGBastet.SetBool("Out", true);
             TriggerLastPuzzle.SetActive(true);
             /*camera_principal.gameObject.SetActive(false);
@@ -53,6 +62,14 @@ public class PiezaPuzzleBastet : Gemas
             Person.gameObject.SetActive(false);*/
         }
 
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            _textPieza.SetActive(false);
+        }
     }
 
     IEnumerator WaitTime3()

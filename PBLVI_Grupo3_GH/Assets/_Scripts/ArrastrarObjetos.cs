@@ -67,7 +67,7 @@ public class ArrastrarObjetos : MonoBehaviour
     {
         if(Input.GetKeyUp(KeyCode.F) && gameObject.transform.parent == jugador.transform)
         {
-            Debug.Log("no pulsas nada");
+            //Debug.Log("no pulsas nada");
             gameObject.transform.parent = parent0.transform;
             audioData.Stop();
         }
