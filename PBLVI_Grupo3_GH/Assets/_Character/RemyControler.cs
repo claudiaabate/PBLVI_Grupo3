@@ -70,6 +70,7 @@ public class RemyControler : MonoBehaviour
                 transform.rotation = Quaternion.AngleAxis((float)targetDegrees, Vector3.up);
             }
         }
+        
         else
         {
             //animator.SetBool("is_moving", false);
